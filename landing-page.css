@@ -1,0 +1,121 @@
+body {
+    background-color: #0B1622;
+}
+
+h1 {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: rgb(121, 118, 146);
+  }
+
+.headfirst{
+      margin-bottom: 10%;
+      position:relative; left:100px;
+  }
+.headsecond{
+    margin-bottom:10%;
+    position:relative; left:100px;
+  }
+
+.headthird{
+    position:relative; left:100px;
+}
+
+ /* navigation bar css*/
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+body {
+	margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 800;
+}
+
+.container {
+	width: 80%;
+	margin: 0 auto;
+}
+
+header {
+  background: rgb(42, 42, 78);
+}
+
+header::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.logo {
+  float: left;
+  padding: 10px 0;
+}
+
+nav {
+  float: right;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 70px;
+  padding-top: 23px;
+
+  position: relative;
+}
+
+nav a {
+  color: rgb(121, 118, 146);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+nav a:hover {
+  color: #000;
+}
+
+nav a::before {
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: #444;
+
+  position: absolute;
+  top: 0;
+  width: 0%;
+
+  transition: all ease-in-out 250ms;
+}
+
+nav a:hover::before {
+  width: 100%;
+}
+
+.fordarklight{
+    width: auto;
+    height: auto;
+    transition: .4s ease;
+    }
+    
+    #checkbox{
+    position: fixed;
+    top: 20px;
+    right: 1420px;
+    appearance: none;
+    width: 80px;
+    height: 40px;
+    background: black;
+    border-radius: 22px;
+    }
+    
+    #checkbox:checked{
+    background: rgb(12, 177, 81);
+    }
+    
+    #checkbox:checked + .fordarklight{
+    background: #EDF1F5;
+    color: white;
+    }
