@@ -95,27 +95,27 @@ nav a:hover::before {
 }
 
 .fordarklight{
-    width: auto;
-    height: auto;
-    transition: .4s ease;
-    }
-    
-    #checkbox{
-    position: fixed;
-    top: 20px;
-    right: 1420px;
-    appearance: none;
-    width: 80px;
-    height: 40px;
-    background: black;
-    border-radius: 22px;
-    }
-    
-    #checkbox:checked{
-    background: rgb(12, 177, 81);
-    }
-    
-    #checkbox:checked + .fordarklight{
-    background: #EDF1F5;
-    color: white;
-    }
+width: auto;
+height: auto;
+transition: .4s ease;
+}
+
+#checkbox{
+position: fixed;
+top: 20px;
+right: 1420px;
+appearance: none;
+width: 80px;
+height: 40px;
+background: black;
+border-radius: 22px;
+}
+
+#checkbox:checked{
+background: rgb(12, 177, 81);
+}
+
+#checkbox:checked + .fordarklight{
+background: #EDF1F5;
+color: white;
+}
