@@ -149,3 +149,8 @@ background: rgb(12, 177, 81);
 background: #EDF1F5;
 color: white;
 }
+
+.search-result {
+    padding: 0;
+    margin: 15px 0;
+}
