@@ -23,13 +23,14 @@
         var docClient = new AWS.DynamoDB.DocumentClient();
 
         function confirmPassword(email, username, pw) {
-            var params = {
-                TableName :"GameGateAccounts",
-                Item:{
-                    "Email": email,
-                    "Password": pw,
-                    "Username": username,
-                }
+            //var params = {
+                //TableName :"GameGateAccounts",
+                //Item:{
+                    //"Email": email,
+                    //"Password": pw,
+                    //"Username": username,
+                //}
+                console.log(document.getElementByName('email'), document.getElementByName('username'), document.getElementByName('pw'));
             };
             docClient.put(params, function(err, data) {
                 if (err) {
