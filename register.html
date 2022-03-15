@@ -8,17 +8,11 @@
         <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1093.0.min.js"></script>
                 
         <head>
-        <script>
-                AWS.config.update({
-                        region: "us-east-1",
-                        //endpoint: 'http://localhost:8000',
-                        // accessKeyId default can be used while using the downloadable version of DynamoDB. 
-                        // For security reasons, do not store AWS Credentials in your files. Use Amazon Cognito instead.
-                        accessKeyId: "fakeMyKeyId",
-                        // secretAccessKey default can be used while using the downloadable version of DynamoDB. 
-                        // For security reasons, do not store AWS Credentials in your files. Use Amazon Cognito instead.
-                        secretAccessKey: "fakeSecretAccessKey"
-                });
+        <script type="text/javascript">
+            AWS.config.region = 'us-east-1'; // Region
+            AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+                IdentityPoolId: 'us-east-1:1f1634e0-e85f-4ffe-a509-ecb75c777309',
+            });
 
         var docClient = new AWS.DynamoDB.DocumentClient();
 
