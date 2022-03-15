@@ -8,7 +8,17 @@
                 
         <head>
         <script>
-            
+            AWS.config.update({
+                region: "us-west-2",
+                endpoint: 'http://localhost:8000',
+                // accessKeyId default can be used while using the downloadable version of DynamoDB. 
+                // For security reasons, do not store AWS Credentials in your files. Use Amazon Cognito instead.
+                accessKeyId: "fakeMyKeyId",
+                // secretAccessKey default can be used while using the downloadable version of DynamoDB. 
+                // For security reasons, do not store AWS Credentials in your files. Use Amazon Cognito instead.
+                secretAccessKey: "fakeSecretAccessKey"
+            });
+
         var docClient = new AWS.DynamoDB.DocumentClient();
 
         function confirmPassword(email, username, pw) {
@@ -19,6 +29,7 @@
                     "Password": username[0].value,
                     "Username": pw[0].value,
                 }
+                //console.log("")
             };
             var em = email[0].value;         
             var user = username[0].value; 
@@ -32,7 +43,7 @@
                     }
             });
         }
-        </script>
+       </script>
         </head>    
                 
     <!--navigation bar-->
@@ -65,4 +76,4 @@
     </div>
 </html>
 
-//<script src="register.js"></script>
+<script src="register.js"></script>
