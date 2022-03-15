@@ -8,19 +8,7 @@
                 
         <head>
         <script>
-            AWS.config.region = 'us-east-1'; // Region
-            AWS.config.credentials = new AWS.CognitoIdentityCredentials({
-                IdentityPoolId: 'us-east-1:1f1634e0-e85f-4ffe-a509-ecb75c777309',
-            });
             
-            //Call to obtain credentials
-            AWS.config.credentials.get(function(){
-            // Credentials will be available when this function is called.
-                var accessKeyId = AWS.config.credentials.accessKeyId;
-                var secretAccessKey = AWS.config.credentials.secretAccessKey;
-                var sessionToken = AWS.config.credentials.sessionToken;
-            });
-                
         var docClient = new AWS.DynamoDB.DocumentClient();
 
         function confirmPassword(email, username, pw) {
@@ -44,7 +32,7 @@
                     }
             });
         }
-       </script>
+        </script>
         </head>    
                 
     <!--navigation bar-->
