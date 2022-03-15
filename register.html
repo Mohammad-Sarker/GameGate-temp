@@ -9,9 +9,11 @@
                 
         <head>
         <script>
-            AWS.config.region = 'us-east-1'; // Region
-            AWS.config.credentials = new AWS.CognitoIdentityCredentials({
-                IdentityPoolId: 'us-east-1:1f1634e0-e85f-4ffe-a509-ecb75c777309',
+            AWS.config.update({
+                AWS.config.region = 'us-east-1'; // Region
+                AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+                        IdentityPoolId: 'us-east-1:1f1634e0-e85f-4ffe-a509-ecb75c777309',
+                });
             });
 
         var docClient = new AWS.DynamoDB.DocumentClient();
@@ -24,7 +26,6 @@
                     "Password": username[0].value,
                     "Username": pw[0].value,
                 }
-                //console.log("")
             };
             var em = email[0].value;         
             var user = username[0].value; 
