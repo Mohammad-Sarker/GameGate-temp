@@ -5,7 +5,43 @@
         <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
         <input type="checkbox" id="checkbox">
         <div class="fordarklight">
+        <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1093.0.min.js"></script>
+                
+        <head>
+        <script>
+                AWS.config.update({
+                        region: "us-east-1",
+                        //endpoint: 'http://localhost:8000',
+                        // accessKeyId default can be used while using the downloadable version of DynamoDB. 
+                        // For security reasons, do not store AWS Credentials in your files. Use Amazon Cognito instead.
+                        accessKeyId: "fakeMyKeyId",
+                        // secretAccessKey default can be used while using the downloadable version of DynamoDB. 
+                        // For security reasons, do not store AWS Credentials in your files. Use Amazon Cognito instead.
+                        secretAccessKey: "fakeSecretAccessKey"
+                });
 
+        var docClient = new AWS.DynamoDB.DocumentClient();
+
+        function confirmPassword(email, username, password) {
+            var params = {
+                TableName :"GameGateAccounts",
+                Item:{
+                    "Username": email,
+                    "Username": username,
+                    "Password": password
+                }
+            };
+            docClient.put(params, function(err, data) {
+                if (err) {
+                    document.getElementById('textarea').innerHTML = "Unable to add item: " + "\n" + JSON.stringify(err, undefined, 2);
+                    } else {
+                        document.getElementById('textarea').innerHTML = "PutItem succeeded: " + "\n" + JSON.stringify(data, undefined, 2);
+                    }
+            });
+        }
+       </script>
+       </head>    
+                
     <!--navigation bar-->
     <header>
         <div class="container">
@@ -26,11 +62,11 @@
     <div class="parent_container">
             <div class="child_container">
                 <div><h1>GameGate Sign Up</h1></div>
-                <div><input class="textbox" type="text" placeholder="Email"></div>
-                <div><input class="textbox" type="text" placeholder="Username"></div>
+                <div><input class="textbox" name="email" type="text" placeholder="Email"></div>
+                <div><input class="textbox" name="username" type="text" placeholder="Username"></div>
                 <div><input class="textbox" name="password" type="password" placeholder="Password"></div>
                 <div><input class="textbox" name="confirm" type="password" placeholder="Confirm password"></div>
-                <div><button class="button" type="submit" onclick="confirmPassword()">Sign up</button></div>
+                <div><button class="button" type="submit" onclick="confirmPassword(email, username, password)">Sign up</button></div>
                 <div><p>Already have an account? Log in <a href="login.html">here</a></p></div>
             </div>     
     </div>
