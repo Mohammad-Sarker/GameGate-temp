@@ -7,8 +7,15 @@
         <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1093.0.min.js"></script>
                 
         <head>
-        <script>
-            AWS.config.region = 'us-east-1'; // Region
+        <script>       
+            
+              AWS.config.update({
+                region: "us-west-2",
+                endpoint: 'http://localhost:8000',
+                accessKeyId: "fakeMyKeyId",
+                secretAccessKey: "fakeSecretAccessKey"
+              });   
+            /*AWS.config.region = 'us-east-1'; // Region
                 
             // Configure the credentials provider to use the identity pool
             AWS.config.credentials = new AWS.CognitoIdentityCredentials({
@@ -21,7 +28,7 @@
                 var secretAccessKey = AWS.config.credentials.secretAccessKey;
                 var sessionToken = AWS.config.credentials.sessionToken;
 
-            });
+            });*/
         var docClient = new AWS.DynamoDB.DocumentClient();
 
         function confirmPassword(email, username, pw) {
@@ -29,8 +36,8 @@
                 TableName :"GameGateAccounts",
                 Item:{
                     "Email": email[0].value,
-                    "Password": username[0].value,
-                    "Username": pw[0].value,
+                    "Password": pw[0].value,
+                    "Username": username[0].value,
                 }
             };
             var em = email[0].value;         
