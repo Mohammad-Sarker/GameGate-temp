@@ -5,6 +5,8 @@
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
     <input type="checkbox" id="checkbox">
     <div class="fordarklight">
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1093.0.min.js"></script>
+    <head>
         <script>       
             
               AWS.config.update({
@@ -28,27 +30,26 @@
             });*/
         var docClient = new AWS.DynamoDB.DocumentClient();
 
-        function confirmLogin(emailAcc, pw) {
-            var table = "GameGateAccounts";
-            
-            var params = {
-                TableName: table,
-                Key:{
-                    "email": emailAcc,
-                    "password": pw
+        function confirmLogin(email) {          
+           var params = {
+                TableName :"GameGateAccounts",
+                Item:{
+                    "Email": email[0].value,
                 }
             };
-            docClient.query(params, function(err, data) {
+            var em = email[0].value;         
+            console.log(em);
+            docClient.get(params, function(err, data) {
                 if (err) {
                     document.getElementById('textarea').innerHTML = "Unable to read item: " + "\n" + JSON.stringify(err, undefined, 2);
                 } else {
                     document.getElementById('textarea').innerHTML = "GetItem succeeded: " + "\n" + JSON.stringify(data, undefined, 2);
-                    window.location.href = "profilepage.html";
                 }
             });
         }
             
         </script>
+      </head>
         <!--navigation bar-->
         <header>
             <div class="container">
@@ -71,7 +72,7 @@
                 <div><h1>GameGate Login</h1></div>
                 <div><input class="textbox" name="email" type="text" placeholder="Email"></div>
                 <div><input class="textbox" name="pw" type="password" placeholder="Password"></div>
-                <div><button class="button" type="submit" onclick="confirmLogin(document.getElementsByName('emailAcc'), document.getElementsByName('pw'))">Login</button></div>
+                <div><button class="button" type="submit" onclick="confirmLogin(document.getElementsByName('email'))">Login</button></div>
                 <div><p>No account? Register <a href="register.html">here</a></p></div>
             </div>     
     </div>
