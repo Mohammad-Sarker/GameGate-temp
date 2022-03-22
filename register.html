@@ -1,11 +1,54 @@
-
 <!DOCTYPE html>
 <html>
         <link rel="stylesheet" href="style.css">
         <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
         <input type="checkbox" id="checkbox">
         <div class="fordarklight">
-
+        <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1093.0.min.js"></script>
+        <head>
+          <script>       
+              AWS.config.update({
+                region: "us-east-1",
+                accessKeyId: "fakeMyKeyId",
+                secretAccessKey: "fakeSecretAccessKey"
+              });   
+            /*AWS.config.region = 'us-east-1'; // Region
+                
+            // Configure the credentials provider to use the identity pool
+            AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+                IdentityPoolId: 'us-east-1:1f1634e0-e85f-4ffe-a509-ecb75c777309',
+            });
+            
+            // Call to obtain credentials
+            AWS.config.credentials.get(function(){
+                var accessKeyId = AWS.config.credentials.accessKeyId;
+                var secretAccessKey = AWS.config.credentials.secretAccessKey;
+                var sessionToken = AWS.config.credentials.sessionToken;
+            });*/
+        var docClient = new AWS.DynamoDB.DocumentClient();
+        function confirmPassword(email, username, pw) {
+            var params = {
+                TableName :"GameGateAccounts",
+                Item:{
+                    "Email": email[0].value,
+                    "Password": pw[0].value,
+                    "Username": username[0].value,
+                }
+            };
+            var em = email[0].value;         
+            var user = username[0].value; 
+            var pr = pw[0].value;
+            console.log(em, user, pr);
+            docClient.put(params, function(err, data) {
+                if (!err) {
+                        console.log("Worked");
+                } else {
+                        console.log("Not Worked");
+                }
+            });
+        }
+        </script>
+        </head>
     <!--navigation bar-->
     <header>
         <div class="container">
@@ -26,14 +69,13 @@
     <div class="parent_container">
             <div class="child_container">
                 <div><h1>GameGate Sign Up</h1></div>
-                <div><input class="textbox" type="text" placeholder="Email"></div>
-                <div><input class="textbox" type="text" placeholder="Username"></div>
-                <div><input class="textbox" name="password" type="password" placeholder="Password"></div>
+                <div><input class="textbox" name="email" type="text" placeholder="Email"></div>
+                <div><input class="textbox" name="username" type="text" placeholder="Username"></div>
+                <div><input class="textbox" name="pw" type="password" placeholder="Password"></div>
                 <div><input class="textbox" name="confirm" type="password" placeholder="Confirm password"></div>
-                <div><button class="button" type="submit" onclick="confirmPassword()">Sign up</button></div>
+                <div><button class="button" type="submit" onclick="confirmPassword(document.getElementsByName('email'), document.getElementsByName('username'), document.getElementsByName('pw'))">Sign up</button></div>
                 <div><p>Already have an account? Log in <a href="login.html">here</a></p></div>
             </div>     
     </div>
-</html>
 
-<script src="register.js"></script>
+</html>

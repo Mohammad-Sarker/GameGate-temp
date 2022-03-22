@@ -1,0 +1,228 @@
+body {
+    background-color: #0B1622;
+    color: rgb(121, 118, 146);
+}
+
+h1 {
+    font-size: 40px;
+}
+
+#pfp {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    }
+
+.logo {
+    float: left;
+    padding: 10px 0;
+    }
+
+.mainContainer {
+    padding-left: 200px;
+    padding-right: 200px;
+    padding-top: 50px;
+}
+
+.statsContainer {
+    display: flex;
+    gap: 30px;
+    flex-direction: row;
+    background-color: rgb(42, 42, 78);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.gamestatsContainer {
+    display: flex;
+    flex-direction: row;
+    line-height: 0;
+    padding-top: 20px;
+    gap: 30px;
+    text-align: center;
+    padding-left: 100px;
+}
+
+.gameStatsMiniContainer {
+    line-height: 5px;
+}
+
+.followStatsContainer {
+    display: flex;
+    flex-direction: row;
+    padding-top: 20px;
+    padding-left: 150px;
+    gap: 30px;
+    text-align: center;
+}
+
+.favsContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.favGamesContainer {
+    display: flex;
+    gap: 30px;
+    background-color: rgb(42, 42, 78);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.gameCovers {
+    object-fit: cover;
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+}
+
+.activitiesContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.activitiesMiniContainer {
+    background-color: rgb(42, 42, 78);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+    border-radius: 10px;
+
+}
+
+.reviewsContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.reviewsMiniContainer {
+    display: flex;
+    background-color: rgb(42, 42, 78);
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.scoreColor {
+    color: green;
+    stroke: black;
+}
+
+::placeholder {
+    color: white;
+}
+
+a:visited {
+    color: rgb(121, 118, 146);
+    text-decoration: none;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+body {
+margin: 0;
+font-family: 'Source Sans Pro', sans-serif;
+font-weight: 800;
+}
+
+.container {
+width: 80%;
+margin: 0 auto;
+}
+
+header {
+background: rgb(42, 42, 78);
+}
+
+header::after {
+content: '';
+display: table;
+clear: both;
+}
+
+.logo {
+float: left;
+padding: 10px 0;
+}
+
+nav {
+float: right;
+}
+
+nav ul {
+margin: 0;
+padding: 0;
+list-style: none;
+}
+
+nav li {
+display: inline-block;
+margin-left: 70px;
+padding-top: 23px;
+
+position: relative;
+}
+
+nav a {
+color: rgb(121, 118, 146);
+text-decoration: none;
+text-transform: uppercase;
+font-size: 20px;
+}
+
+nav a:hover {
+color: #000;
+}
+
+nav a::before {
+content: '';
+display: block;
+height: 5px;
+background-color: #444;
+
+position: absolute;
+top: 0;
+width: 0%;
+
+transition: all ease-in-out 250ms;
+}
+
+nav a:hover::before {
+width: 100%;
+}
+
+.fordarklight{
+width: auto;
+height: auto;
+transition: .4s ease;
+}
+
+#checkbox{
+position: fixed;
+top: 20px;
+right: 1420px;
+appearance: none;
+width: 80px;
+height: 40px;
+background: black;
+border-radius: 22px;
+}
+
+#checkbox:checked{
+background: rgb(12, 177, 81);
+}
+
+#checkbox:checked + .fordarklight{
+background: #EDF1F5;
+color: white;
+}
+
+.search-result {
+    padding: 0;
+    margin: 15px 0;
+}
