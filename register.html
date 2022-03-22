@@ -7,24 +7,16 @@
         <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1093.0.min.js"></script>
         <head>
           <script>       
-              AWS.config.update({
+              /*AWS.config.update({
                 region: "us-east-1",
                 accessKeyId: "fakeMyKeyId",
                 secretAccessKey: "fakeSecretAccessKey"
-              });   
-            /*AWS.config.region = 'us-east-1'; // Region
-                
-            // Configure the credentials provider to use the identity pool
-            AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+              });*/  
+              AWS.config.region = 'us-east-1'; // Region
+              AWS.config.credentials = new AWS.CognitoIdentityCredentials({
                 IdentityPoolId: 'us-east-1:1f1634e0-e85f-4ffe-a509-ecb75c777309',
-            });
-            
-            // Call to obtain credentials
-            AWS.config.credentials.get(function(){
-                var accessKeyId = AWS.config.credentials.accessKeyId;
-                var secretAccessKey = AWS.config.credentials.secretAccessKey;
-                var sessionToken = AWS.config.credentials.sessionToken;
-            });*/
+              });
+           
         var docClient = new AWS.DynamoDB.DocumentClient();
         function confirmPassword(email, username, pw) {
             var params = {
