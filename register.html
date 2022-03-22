@@ -5,13 +5,10 @@
         <input type="checkbox" id="checkbox">
         <div class="fordarklight">
         <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1093.0.min.js"></script>
-                
         <head>
-        <script>       
-            
+          <script>       
               AWS.config.update({
-                region: "us-west-2",
-                endpoint: 'http://localhost:8000',
+                region: "us-east-1",
                 accessKeyId: "fakeMyKeyId",
                 secretAccessKey: "fakeSecretAccessKey"
               });   
@@ -27,10 +24,8 @@
                 var accessKeyId = AWS.config.credentials.accessKeyId;
                 var secretAccessKey = AWS.config.credentials.secretAccessKey;
                 var sessionToken = AWS.config.credentials.sessionToken;
-
             });*/
         var docClient = new AWS.DynamoDB.DocumentClient();
-
         function confirmPassword(email, username, pw) {
             var params = {
                 TableName :"GameGateAccounts",
@@ -45,16 +40,15 @@
             var pr = pw[0].value;
             console.log(em, user, pr);
             docClient.put(params, function(err, data) {
-                if (err) {
-                    document.getElementById('textarea').innerHTML = "Unable to add item: " + "\n" + JSON.stringify(err, undefined, 2);
-                    } else {
-                        document.getElementById('textarea').innerHTML = "PutItem succeeded: " + "\n" + JSON.stringify(data, undefined, 2);
-                    }
+                if (!err) {
+                        console.log("Worked");
+                } else {
+                        console.log("Not Worked");
+                }
             });
         }
         </script>
-        </head>    
-                
+        </head>
     <!--navigation bar-->
     <header>
         <div class="container">
@@ -83,4 +77,5 @@
                 <div><p>Already have an account? Log in <a href="login.html">here</a></p></div>
             </div>     
     </div>
+
 </html>
