@@ -27,11 +27,17 @@ searchBtn.addEventListener('click', () => {
         removeAllChildNodes(container);
         for(let i = 0; i < data.length; i++) {
             if(data[i]['first_release_date'] != undefined) {
+                const searchResultContainer = document.createElement('div');
+                searchResultContainer.classList.add('search-result-container');
                 const searchResult = document.createElement('p');
                 const releaseDate = timeConverter(data[i]['first_release_date']);
+                const resultImg = document.createElement('img');
+                resultImg.src = 'https:' + data[i].cover.url;
+                resultImg.alt = data[i].name;
                 searchResult.textContent = `${data[i]['name']} (${timeConverter(data[i]['first_release_date'])})`;
                 searchResult.classList.add('search-result');
-                searchResult.addEventListener('click', () => {
+                searchResultContainer.append(resultImg, searchResult);
+                searchResultContainer.addEventListener('click', () => {
                     body.removeChild(parentContainer);
                     const gameDiv = document.createElement('div');
                     gameDiv.classList.add('new-parent');
@@ -73,7 +79,9 @@ searchBtn.addEventListener('click', () => {
                     gameDiv.appendChild(secondDiv);
                     body.appendChild(gameDiv);
                 })
-                container.appendChild(searchResult);
+                container.appendChild(searchResultContainer);
+                // container.appendChild(searchResult);
+                // container.appendChild(resultImg);
             }
         }
     })

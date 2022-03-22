@@ -214,3 +214,23 @@ color: white;
     padding: 0;
     margin: 15px 0;
 }
+
+.search-result-container:hover {
+    cursor: pointer;
+}
+
+.search-results {
+    background-color: rgb(42, 42, 78);
+}
+
+.search-results img {
+    width: 30px;
+    margin-right: 5px;
+    margin-right: 5px;
+}
+
+.search-result-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
