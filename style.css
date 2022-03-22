@@ -1,3 +1,63 @@
+.coverArt {
+    object-fit: contain;
+    height: auto;
+    width: 300px;
+    border-radius: 10px;
+    border: 5px solid rgb(121, 118, 146);
+}
+
+.coverTitleContainer {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-left: 50px;
+    gap: 10px;
+
+}
+
+.new-parent {
+    display: flex;
+    justify-content: center;
+}
+
+.new-child {
+    flex-direction: row;
+    
+    display: flex;
+    width: 1200px;
+    height: auto;
+    padding: 50px;
+    background-color: rgb(42, 42, 78);
+    border-radius: 10px;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.new-child p {
+    line-height: 25px;
+}
+
+figcaption {
+    text-align: center;
+    font-size: 30px;
+}
+
+/* .gamestatus {
+    background-color: rgb(121, 118, 146);
+    color: white;
+} */
+
+hr.rounded {
+    border-top: 8px solid #bbb;
+    border-radius: 5px;
+  }
+
+.gameDescrip {
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+}
+
 body {
     background-color: #0B1622;
     color: rgb(121, 118, 146);
