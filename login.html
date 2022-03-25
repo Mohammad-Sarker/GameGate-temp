@@ -9,11 +9,11 @@
     <head>
         <script>
             /*AWS.config.update({
-                                                                      region: "us-east-1",
-                                                                      //endpoint: 'http://localhost:8000',
-                                                                      accessKeyId: "fakeMyKeyId",
-                                                                      secretAccessKey: "fakeSecretAccessKey"
-                                                                    });*/
+                                                                                  region: "us-east-1",
+                                                                                  //endpoint: 'http://localhost:8000',
+                                                                                  accessKeyId: "fakeMyKeyId",
+                                                                                  secretAccessKey: "fakeSecretAccessKey"
+                                                                                });*/
 
             AWS.config.region = 'us-east-1'; // Region
             AWS.config.credentials = new AWS.CognitoIdentityCredentials({
@@ -50,7 +50,7 @@
     </head>
     <!--navigation bar-->
     <header>
-        <div class="container">
+        <div class="notloggedin_container">
             <h1 class="logo"></h1>
             <a href="index.html">
                 <img src="https://i.imgur.com/HhHqFSf.png" alt="logo" class="logo" height="65" width="62"></a>
