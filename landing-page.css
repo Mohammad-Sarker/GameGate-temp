@@ -7,18 +7,9 @@ h1 {
     color: rgb(121, 118, 146);
   }
 
-.headfirst{
-      margin-bottom: 10%;
-      position:relative; left:100px;
+.indexcaptions{
+  object-position: center top;
   }
-.headsecond{
-    margin-bottom:10%;
-    position:relative; left:100px;
-  }
-
-.headthird{
-    position:relative; left:100px;
-}
 
  /* navigation bar css*/
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
