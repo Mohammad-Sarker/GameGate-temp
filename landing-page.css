@@ -8,8 +8,13 @@ h1 {
   }
 
 .indexcaptions{
-  object-position: center top;
-  }
+    display: flex;
+    gap: 100px;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-left: 100px;
+    
+}
 
  /* navigation bar css*/
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
