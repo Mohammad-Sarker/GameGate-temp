@@ -66,12 +66,12 @@ h1 {
     font-size: 40px;
 }
 
-.credentials_container {
+.backdrop_container {
     display: flex;
     justify-content: center;
 }
 
-.credstext_container {
+.textbox_container {
     flex-direction: column;
     text-align: center;
     display: flex;
