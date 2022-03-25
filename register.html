@@ -1,74 +1,80 @@
 <!DOCTYPE html>
 <html>
-        <link rel="stylesheet" href="style.css">
-        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
-        <input type="checkbox" id="checkbox">
-        <div class="fordarklight">
-        <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1093.0.min.js"></script>
-        <head>
-          <script>       
-              /*AWS.config.update({
-                region: "us-east-1",
-                accessKeyId: "fakeMyKeyId",
-                secretAccessKey: "fakeSecretAccessKey"
-              });*/  
-              AWS.config.region = 'us-east-1'; // Region
-              AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+<link rel="stylesheet" href="style.css">
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+<input type="checkbox" id="checkbox">
+<div class="fordarklight">
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1093.0.min.js"></script>
+
+    <head>
+        <script>
+            /*AWS.config.update({
+                            region: "us-east-1",
+                            accessKeyId: "fakeMyKeyId",
+                            secretAccessKey: "fakeSecretAccessKey"
+                          });*/
+            AWS.config.region = 'us-east-1'; // Region
+            AWS.config.credentials = new AWS.CognitoIdentityCredentials({
                 IdentityPoolId: 'us-east-1:1f1634e0-e85f-4ffe-a509-ecb75c777309',
-              });
-           
-        var docClient = new AWS.DynamoDB.DocumentClient();
-        function confirmPassword(email, username, pw) {
-            var params = {
-                TableName :"GameGateAccounts",
-                Item:{
-                    "Email": email[0].value,
-                    "Password": pw[0].value,
-                    "Username": username[0].value,
-                }
-            };
-            var em = email[0].value;         
-            var user = username[0].value; 
-            var pr = pw[0].value;
-            console.log(em, user, pr);
-            docClient.put(params, function(err, data) {
-                if (!err) {
+            });
+
+            var docClient = new AWS.DynamoDB.DocumentClient();
+
+            function confirmPassword(email, username, pw) {
+                var params = {
+                    TableName: "GameGateAccounts",
+                    Item: {
+                        "Email": email[0].value,
+                        "Password": pw[0].value,
+                        "Username": username[0].value,
+                    }
+                };
+                var em = email[0].value;
+                var user = username[0].value;
+                var pr = pw[0].value;
+                console.log(em, user, pr);
+                docClient.put(params, function(err, data) {
+                    if (!err) {
                         console.log("Worked");
                         window.location.href = "profilepage.html";
-                } else {
+                    } else {
                         console.log("Not Worked");
-                }
-            });
-        }
+                    }
+                });
+            }
         </script>
-        </head>
+    </head>
     <!--navigation bar-->
     <header>
         <div class="container">
-          <h1 class="logo"></h1>
-          <a href="index.html">
-            <img src = "https://i.imgur.com/HhHqFSf.png" alt="logo" class="logo" height="65" width="62"></a>
-          <nav>
-            <ul>
-              <li><a href="homepage.html">Home</a></li>
-              <li><a href="login.html">Login</a></li>
-              <li><a href="register.html">Signup</a></li>
-              <li><a href="search.html">Search</a></li>
-            </ul>
-          </nav>
+            <h1 class="logo"></h1>
+            <a href="index.html">
+                <img src="https://i.imgur.com/HhHqFSf.png" alt="logo" class="logo" height="65" width="62"></a>
+            <nav>
+                <ul>
+                    <li><a href="homepage.html">Home</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="register.html">Signup</a></li>
+                    <li><a href="search.html">Search</a></li>
+                </ul>
+            </nav>
         </div>
-      </header>
-<!--navigation bar-->    
-    <div class="parent_container">
-            <div class="child_container">
-                <div><h1>GameGate Sign Up</h1></div>
-                <div><input class="textbox" name="email" type="text" placeholder="Email"></div>
-                <div><input class="textbox" name="username" type="text" placeholder="Username"></div>
-                <div><input class="textbox" name="pw" type="password" placeholder="Password"></div>
-                <div><input class="textbox" name="confirm" type="password" placeholder="Confirm password"></div>
-                <div><button class="button" type="submit" onclick="confirmPassword(document.getElementsByName('email'), document.getElementsByName('username'), document.getElementsByName('pw'))">Sign up</button></div>
-                <div><p>Already have an account? Log in <a href="login.html">here</a></p></div>
-            </div>     
+    </header>
+    <!--navigation bar-->
+    <div class="credentials_container">
+        <div class="credstext_container">
+            <div>
+                <h1>GameGate Sign Up</h1>
+            </div>
+            <div><input class="textbox" name="email" type="text" placeholder="Email"></div>
+            <div><input class="textbox" name="username" type="text" placeholder="Username"></div>
+            <div><input class="textbox" name="pw" type="password" placeholder="Password"></div>
+            <div><input class="textbox" name="confirm" type="password" placeholder="Confirm password"></div>
+            <div><button class="button" type="submit" onclick="confirmPassword(document.getElementsByName('email'), document.getElementsByName('username'), document.getElementsByName('pw'))">Sign up</button></div>
+            <div>
+                <p>Already have an account? Log in <a href="login.html">here</a></p>
+            </div>
+        </div>
     </div>
 
 </html>

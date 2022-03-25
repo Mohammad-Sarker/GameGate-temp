@@ -12,7 +12,6 @@
     margin: auto;
     margin-left: 50px;
     gap: 10px;
-
 }
 
 .new-parent {
@@ -22,7 +21,6 @@
 
 .new-child {
     flex-direction: row;
-    
     display: flex;
     width: 1200px;
     height: auto;
@@ -42,6 +40,7 @@ figcaption {
     font-size: 30px;
 }
 
+
 /* .gamestatus {
     background-color: rgb(121, 118, 146);
     color: white;
@@ -50,7 +49,7 @@ figcaption {
 hr.rounded {
     border-top: 8px solid #bbb;
     border-radius: 5px;
-  }
+}
 
 .gameDescrip {
     display: flex;
@@ -67,17 +66,17 @@ h1 {
     font-size: 40px;
 }
 
-.parent_container {
+.credentials_container {
     display: flex;
     justify-content: center;
 }
 
-.child_container {
+.credstext_container {
     flex-direction: column;
-    text-align:center;
-    display:flex;
-    width:500px;
-    height:630px;
+    text-align: center;
+    display: flex;
+    width: 500px;
+    height: 630px;
     background-color: rgb(42, 42, 78);
     border-radius: 10px;
     gap: 30px;
@@ -113,101 +112,98 @@ a:visited {
 
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 body {
-margin: 0;
-font-family: 'Source Sans Pro', sans-serif;
-font-weight: 800;
+    margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 800;
 }
 
 .container {
-width: 80%;
-margin: 0 auto;
+    width: 80%;
+    margin: 0 auto;
 }
 
 header {
-background: rgb(42, 42, 78);
+    background: rgb(42, 42, 78);
 }
 
 header::after {
-content: '';
-display: table;
-clear: both;
+    content: '';
+    display: table;
+    clear: both;
 }
 
 .logo {
-float: left;
-padding: 10px 0;
+    float: left;
+    padding: 10px 0;
 }
 
 nav {
-float: right;
+    float: right;
 }
 
 nav ul {
-margin: 0;
-padding: 0;
-list-style: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 nav li {
-display: inline-block;
-margin-left: 70px;
-padding-top: 23px;
-
-position: relative;
+    display: inline-block;
+    margin-left: 70px;
+    padding-top: 23px;
+    position: relative;
 }
 
 nav a {
-color: rgb(121, 118, 146);
-text-decoration: none;
-text-transform: uppercase;
-font-size: 20px;
+    color: rgb(121, 118, 146);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 20px;
 }
 
 nav a:hover {
-color: #000;
+    color: #000;
 }
 
 nav a::before {
-content: '';
-display: block;
-height: 5px;
-background-color: #444;
-
-position: absolute;
-top: 0;
-width: 0%;
-
-transition: all ease-in-out 250ms;
+    content: '';
+    display: block;
+    height: 5px;
+    background-color: #444;
+    position: absolute;
+    top: 0;
+    width: 0%;
+    transition: all ease-in-out 250ms;
 }
 
 nav a:hover::before {
-width: 100%;
+    width: 100%;
 }
 
-.fordarklight{
-width: auto;
-height: auto;
-transition: .4s ease;
+.fordarklight {
+    width: auto;
+    height: auto;
+    transition: .4s ease;
 }
 
-#checkbox{
-position: fixed;
-top: 20px;
-right: 1420px;
-appearance: none;
-width: 80px;
-height: 40px;
-background: black;
-border-radius: 22px;
+#checkbox {
+    position: fixed;
+    top: 20px;
+    right: 1420px;
+    appearance: none;
+    width: 80px;
+    height: 40px;
+    background: black;
+    border-radius: 22px;
 }
 
-#checkbox:checked{
-background: rgb(12, 177, 81);
+#checkbox:checked {
+    background: rgb(12, 177, 81);
 }
 
-#checkbox:checked + .fordarklight{
-background: #EDF1F5;
-color: white;
+#checkbox:checked+.fordarklight {
+    background: #EDF1F5;
+    color: white;
 }
 
 .search-result {
