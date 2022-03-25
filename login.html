@@ -9,11 +9,11 @@
     <head>
         <script>
             /*AWS.config.update({
-                                                                region: "us-east-1",
-                                                                //endpoint: 'http://localhost:8000',
-                                                                accessKeyId: "fakeMyKeyId",
-                                                                secretAccessKey: "fakeSecretAccessKey"
-                                                              });*/
+                                                                      region: "us-east-1",
+                                                                      //endpoint: 'http://localhost:8000',
+                                                                      accessKeyId: "fakeMyKeyId",
+                                                                      secretAccessKey: "fakeSecretAccessKey"
+                                                                    });*/
 
             AWS.config.region = 'us-east-1'; // Region
             AWS.config.credentials = new AWS.CognitoIdentityCredentials({
@@ -72,7 +72,8 @@
             </div>
             <div><input class="textbox" name="email" type="text" placeholder="Email"></div>
             <div><input class="textbox" name="pw" type="password" placeholder="Password"></div>
-            <div><button class="button" type="submit" onclick="confirmLogin(document.getElementsByName('email'), document.getElementsByName('pw'))">Login</button></div>
+            <div><button class="button" type="submit" onclick="confirmLogin(document.getElementsByName('email'), document.getElementsByName('pw'))">Login</button>
+            </div>
             <div>
                 <p>No account? Register <a href="register.html">here</a></p>
             </div>
