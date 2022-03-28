@@ -71,9 +71,14 @@ figcaption {
     font-size: 30px;
 }
 
-.gamestatus {
+.list_entry {
     background-color: rgb(121, 118, 146);
     color: white;
+}
+
+.list_entry:hover {
+  background-color: #3e8e41;
+  color: white;
 }
 
 hr.rounded {
